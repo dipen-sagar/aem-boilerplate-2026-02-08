@@ -149,6 +149,19 @@ async function loadLazy(doc) {
   loadFonts();
 }
 
+
+/**
+ * Check if consent was given for a specific topic.
+ * @param {*} topic Topic identifier
+ * @returns {boolean} True if consent was given
+ */
+// eslint-disable-next-line no-unused-vars
+export function getConsent(topic) {
+  console.warn('getConsent not implemented');
+  return true;
+}
+
+
 /**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
