@@ -3,11 +3,11 @@ import { initializers } from '@dropins/tools/initializer.js';
 import { initialize, setFetchGraphQlHeaders } from '@dropins/storefront-auth/api.js';
 import { initializeDropin } from './index.js';
 import { fetchPlaceholders } from '../commerce.js';
-import { getHeaders } from '../configs.js';
+// import { getHeaders } from '../configs.js';
 
 await initializeDropin(async () => {
-  setFetchGraphQlHeaders((prev) => ({ ...prev, ...getHeaders('auth') }));
-
+  // setFetchGraphQlHeaders((prev) => ({ ...prev, ...getHeaders('auth') }));
+  setFetchGraphQlHeaders((prev) => ({ ...prev }));
   const labels = await fetchPlaceholders();
   const langDefinitions = {
     default: {
