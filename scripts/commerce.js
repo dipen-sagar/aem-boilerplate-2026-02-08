@@ -6,7 +6,7 @@ import {
   getCookie,
   getRootPath,
 } from './configs.js';
-import { getConsent } from './scripts.js';
+// import { getConsent } from './scripts.js';
 
 /**
  * Gets placeholders object.
@@ -251,9 +251,9 @@ export function getOptionsUIDsFromUrl() {
 }
 
 export async function trackHistory() {
-  if (!getConsent('commerce-recommendations')) {
-    return;
-  }
+  // if (!getConsent('commerce-recommendations')) {
+  //   return;
+  // }
   // Store product view history in session storage
   const storeViewCode = getConfigValue('headers.cs.Magento-Store-View-Code');
   window.adobeDataLayer.push((dl) => {
