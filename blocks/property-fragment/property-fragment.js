@@ -21,15 +21,12 @@ export default function decorate(block) {
   
   const quoteDiv = block.querySelector('div:last-of-type');
   const adventureDiv = document.createElement('div');
-  adventureDiv.id = "adventure-" + slug; 
+  adventureDiv.id = "property-" + slug; 
   quoteDiv.replaceWith(adventureDiv);
 
 fetch(AEM_HOST + '/graphql/execute.json/frescopa/allProperties')
 .then(response => response.json())
 .then(response => {
-
-const backgroundImage = response.data.waslPropertyList.items[0].image._path;
-document.getElementById(adventureDiv.id).innerHTML = "<section><img src=" + AEM_HOST + backgroundImage + "></section>";  
 
 const unitNo = response.data.waslPropertyList.items[0].unitNo;
 document.getElementById(adventureDiv.id).innerHTML += "<section><h3>Unit : "+ unitNo + "</h3></section>";
@@ -48,6 +45,11 @@ document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Id: " + id 
 
 const geoLocation = response.data.waslPropertyList.items[0].geoLocation;
 document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Location: " + geoLocation + "</section>";
+
+
+const backgroundImage = response.data.waslPropertyList.items[0].image._path;
+document.getElementById(adventureDiv.id).innerHTML = "<section><img src=" + AEM_HOST + backgroundImage + "></section>";  
+
 
 })
 .catch(error => {
