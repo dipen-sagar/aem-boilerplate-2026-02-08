@@ -28,25 +28,25 @@ fetch(AEM_HOST + '/graphql/execute.json/frescopa/allProperties')
 .then(response => response.json())
 .then(response => {
 
-const backgroundImage = response.data.adventureList.items[0].image._path;
+const backgroundImage = response.data.waslPropertyList.items[0].image._path;
 document.getElementById(adventureDiv.id).innerHTML = "<section><img src=" + AEM_HOST + backgroundImage + "></section>";  
 
-const unitNo = response.data.adventureList.items[0].unitNo;
+const unitNo = response.data.waslPropertyList.items[0].unitNo;
 document.getElementById(adventureDiv.id).innerHTML += "<section><h3>Unit : "+ unitNo + "</h3></section>";
 
-const desc = response.data.adventureList.items[0].description.plaintext;
+const desc = response.data.waslPropertyList.items[0].description.plaintext;
 document.getElementById(adventureDiv.id).innerHTML += "<section>" + desc + "</section>";
 
-const propType = response.data.adventureList.items[0]. propertyType;
+const propType = response.data.waslPropertyList.items[0]. propertyType;
 document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Property Type: " + propType + "</section>";
 
-const price = response.data.adventureList.items[0].price;
+const price = response.data.waslPropertyList.items[0].price;
 document.getElementById(adventureDiv.id).innerHTML += "<section>" +"Price: " + price + "</section>";
 
-const id = response.data.adventureList.items[0].id;
+const id = response.data.waslPropertyList.items[0].id;
 document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Id: " + id + "</section>";
 
-const geoLocation = response.data.adventureList.items[0].geoLocation;
+const geoLocation = response.data.waslPropertyList.items[0].geoLocation;
 document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Location: " + geoLocation + "</section>";
 
 })
