@@ -24,7 +24,7 @@ export default function decorate(block) {
   adventureDiv.id = "adventure-" + slug; 
   quoteDiv.replaceWith(adventureDiv);
 
-fetch(AEM_HOST + '/graphql/execute.json/frescopa/allProperties)
+fetch(AEM_HOST + '/graphql/execute.json/frescopa/allProperties')
 .then(response => response.json())
 .then(response => {
 
