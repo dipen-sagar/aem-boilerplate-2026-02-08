@@ -47,8 +47,8 @@ const geoLocation = response.data.waslPropertyList.items[0].geoLocation;
 document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Location: " + geoLocation + "</section>";
 
 
-const backgroundImage = response.data.waslPropertyList.items[0].image._path;
-document.getElementById(adventureDiv.id).innerHTML = "<section><img src=" + AEM_HOST + backgroundImage + "></section>";  
+// const backgroundImage = response.data.waslPropertyList.items[0].image._path;
+// document.getElementById(adventureDiv.id).innerHTML = "<section><img src=" + AEM_HOST + backgroundImage + "></section>";  
 
 
 })
